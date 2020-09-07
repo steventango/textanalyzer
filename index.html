@@ -1,0 +1,129 @@
+<!doctype HTML>
+<html lang="en" type="text/html" charset="utf-8">
+
+<head>
+	<link rel="manifest" href="/wapps/textanalyzer/dev/manifest.json">
+	<!-- HTML Meta -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=yes, width=device-width, height=device-height, initial-scale=1,  maximum-scale=10" />
+	<meta property="og:title" content="Text Analyzer">
+	<meta property="og:type" content="website" >
+	<meta property="og:url" content="https://steventang.tk/wapps/textanalyzer/">
+	<meta property="og:image" content="https://steventang.tk/wapps/textanalyzer/assets/images/android-chrome-512x512.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+	<!-- Icons -->
+	<link rel="shortcut icon" href="/wapps/textanalyzer/assets/images/favicon.ico">
+	<link rel="icon" type="image/png" sizes="16x16" href="/wapps/textanalyzer/assets/images/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/wapps/textanalyzer/assets/images/favicon-32x32.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/wapps/textanalyzer/assets/images/apple-touch-icon.png">
+	<link rel="mask-icon" href="/wapps/textanalyzer/assets/images/safari-pinned-tab.svg" color="#4dd0e1">
+	<meta name="msapplication-config" content="/wapps/textanalyzer/assets/images/browserconfig.xml">
+	<meta name="theme-color" content="#4dd0e1">
+
+	<meta name="application-name" content="Text Analyzer">
+	<meta name="description" content="Can analyze word frequency, and go above and beyond!">
+	<title>Text Analyzer</title>
+	<!-- CSS -->
+	<link href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500|Material+Icons|Roboto+Slab" rel="stylesheet">
+	<link href="https://unpkg.com/material-components-web@0.16.0/dist/material-components-web.min.css" rel="stylesheet">
+	<link href="./main-v2.css" rel="stylesheet">
+</head>
+
+<body ng-app="TA_App" class="ng-scope">
+	<header class="mdc-toolbar mdc-toolbar--fixed menu">
+		<div class="mdc-toolbar__row">
+			<section class="mdc-toolbar__section mdc-theme--text-primary-on-light mdc-toolbar__section--align-start custom">
+				<i class="material-icons mdc-ripple-surface" aria-hidden="true" data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>menu</i>
+			</section>
+			<section class="mdc-toolbar__section mdc-theme--text-primary-on-light">
+				<span class="mdc-toolbar__title custom">Text Analyzer</span>
+			</section>
+		</div>
+	</header>
+
+	<aside class="mdc-temporary-drawer mdc-typography">
+		<nav class="mdc-temporary-drawer__drawer">
+			<nav class="mdc-temporary-drawer__content mdc-list">
+				<div class="mdc-list-item search-list-item">
+					<div class="search-box">
+						<input id="search" class="search unicode" type="text" aria-label="Search">
+						<button type="submit" id="searchBtn" class="search-button">
+							<i class="material-icons mdc-ripple-surface" onclick="ux.search(document.getElementById('search').value)" data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>search</i>
+						</button>
+					</div>
+				</div>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#overview">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">dashboard</i>Overview
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#all">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">all_inclusive</i>All
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#hashtags">
+					<i class="material-icons mdc-list-item__start-detail noto-icons hashtag" aria-hidden="true">#</i>Hashtags
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#ats">
+					<i class="material-icons mdc-list-item__start-detail noto-icons" aria-hidden="true">@</i>Ats
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#emojis">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">insert_emoticon</i>Emojis
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#people">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">people</i>People
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#locations">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">location_on</i>Locations
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#time">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">access_time</i>Time
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#urls">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">link</i>URLs
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#emails">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>Emails
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#phonenumbers">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">phone</i>Phone Numbers
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#languages">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">translate</i>Languages
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#numbers">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">looks_one</i>Numbers
+				</a>
+				<a class="mdc-list-item smsonly" data-mdc-auto-init="MDCRipple" href="#toptexters">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Top Texters
+				</a>
+				<a class="mdc-list-item smsonly" data-mdc-auto-init="MDCRipple" href="#reactions">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">bubble_chart</i>Reactions
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#wordcloud">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">cloud</i>Word Cloud
+				</a>
+				<a class="mdc-list-item mdc-list-divider"></a>
+				<a class="mdc-list-item export-item" data-mdc-auto-init="MDCRipple" onclick="text_analyzer.export()">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">share</i>Export as HTML
+				</a>
+				<a class="mdc-list-item" data-mdc-auto-init="MDCRipple" href="#input">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">open_in_new</i>New Analysis
+				</a>
+			</nav>
+		</nav>
+	</aside>
+	<main id="content" class="mdc-layout-grid mdc-layout-grid__inner mdc-toolbar-fixed-adjust mdc-content-changes ng-scope ngview" ng-view ng-controller="mainController"></main>
+	<button id="backtotop" class="mdc-fab mdc-fab--mini material-icons pinned" aria-label="Top" onclick="window.scrollTo(0, 0)" rel="stylesheet">
+		<span class="mdc-fab__icon">keyboard_arrow_up</span>
+	</button>
+	<script defer src="https://unpkg.com/material-components-web@0.16.0/dist/material-components-web.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+	<script defer src="https://steventang.tk/shared/js/wordcloud2.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+	<script defer src="./main-v2.js"></script>
+	<script defer src="/shared/js/emojiregex.min.js"></script>
+	<script defer src="/wapps/textanalyzer/dev/analyze-v2.js"></script>
+</body>
+
+</html>

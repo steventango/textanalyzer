@@ -1,0 +1,50 @@
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+	<div class="mdc-card mdc--full-height">
+		<section class="mdc-card__primary">
+			<h1 id="header" class="mdc-card__title mdc-card__title--large"></h1>
+		</section>
+		<section class="mdc-card__supporting-text">
+			<h2 id="total">Total</h2>
+		</section>
+		<section id="categoryHeader" class="mdc-card__supporting-text">
+			<h2 id="chartInfo">Top X Pie Chart</h2>
+			<div id="chartContainer" class="chart-container">
+				<canvas id="categoryChart"></canvas>
+			</div>
+			<div class="chart-container--3">
+				<h2 id="chartInfo">Texts per Days of The Week</h2>
+				<div id="chartContainer3" class="chart-container">
+					<canvas id="categoryChart3"></canvas>
+				</div>
+			</div>
+			<div class="chart-container--4">
+				<h2 id="chartInfo">Texts per Hour</h2>
+				<div id="chartContainer4" class="chart-container">
+					<canvas id="categoryChart4"></canvas>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 chart-container--2">
+	<div class="mdc-card mdc--full-height">
+		<section class="mdc-card__primary">
+			<h1 id="header" class="mdc-card__title mdc-card__title--large">Timeline</h1>
+		</section>
+		<div class="scrollable-container">
+			<div class="scrollable">
+				<div id="chartContainer2" class="chart-container">
+					<canvas id="categoryChart2"></canvas>
+				</div>
+			</div>
+		</div>
+		</section>
+	</div>
+</div>
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+	<div id="categoryListContainer" class="mdc-card mdc--full-height mdc-elevation-transition mdc-elevation--z0 loading-card" ng-init="displayView()">
+	</div>
+</div>
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 loader-container">
+	<div id="dataLoader" class="loader accent">Loading...</div>
+</div>

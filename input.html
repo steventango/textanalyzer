@@ -1,0 +1,54 @@
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-8-tablet">
+	<div class="mdc-card mdc--full-height">
+		<section class="mdc-card__primary">
+			<h1 class="mdc-card__title mdc-card__title--large">Text Analyzer Info</h1>
+		</section>
+		<section class="mdc-card__supporting-text">
+			Text Analyzer can not only analyze word frequency, but go above and beyond by being able to analyze the frequency of:
+			<i class="material-icons noto-icons hashtag" aria-hidden="true">#</i> Hashtags,
+			<i class="material-icons noto-icons" aria-hidden="true">@</i> Ats,
+			<i class="material-icons" aria-hidden="true">insert_emoticon</i> Emojis,
+			<i class="material-icons" aria-hidden="true">people</i> People,
+			<i class="material-icons" aria-hidden="true">location_on</i> Locations,
+			<i class="material-icons" aria-hidden="true">access_time</i> Time,
+			<i class="material-icons" aria-hidden="true">link</i> URLs,
+			<i class="material-icons" aria-hidden="true">email</i> Emails,
+			<i class="material-icons" aria-hidden="true">phone</i> Phone Numbers,
+			<i class="material-icons" aria-hidden="true">translate</i> Languages, and Numbers.
+			<br> Furthermore, word clouds <i class="material-icons" aria-hidden="true">cloud</i> are automatically generated from words in your analysis to create a beautiful summary of your
+			text. The entire analysis is performed in your browser, meaning that your data will remain private and secure <i class="material-icons" aria-hidden="true">lock</i>. Text Analyzer has Unicode support, allowing it to analyze any language. In addition,
+			SMS data in CSV format can be transformed into a comprehensive analysis of the SMS conversation <i class="material-icons" aria-hidden="true">textsms</i>. With a beautiful consistent Material Design look, and responsive analyses; Text Analyzer will
+			be aesthetically pleasing and engaging on any device. If you wish to share you analyses with others, you can export to HTML.<a href="#info" class="mdc-theme--accent"> More</a>
+		</section>
+	</div>
+</div>
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-8-tablet">
+	<div class="mdc-card mdc--full-height">
+		<section class="mdc-card__primary">
+			<h1 class="mdc-card__title mdc-card__title--large">Input</h1>
+		</section>
+		<section class="mdc-card__supporting-text">
+			<div class="mdc-textfield delimiter" data-mdc-auto-init="MDCTextfield">
+				<input type="text" id="delimiter" class="mdc-textfield__input unicode">
+				<label class="mdc-textfield__label" for="delimiter"><i class="material-icons">flag</i> Delimiter</label>
+			</div>
+			<!-- Hope update for mdc-textarea comes soon-->
+			<div class="mdc-textfield mdc-textfield--multiline" style="width: 100%;" data-mdc-auto-init="MDCTextfield">
+				<textarea id="textarea" class="mdc-textfield__input unicode" style="width: 100%; height: 128px;" spellcheck="false" autocomplete="off" rows="8" cols="40"></textarea>
+				<label for="textarea" class="mdc-textfield__label"><i class="material-icons">input</i> Input</label>
+			</div>
+		</section>
+		<section class="mdc-card__actions dropbox_c">
+			<div id="dropbox" class="mdc-theme--text-icon-on-accent mdc-ripple-surface mdc-ripple-surface--accent dropbox" onchange="dropbox.filechange()" ondragenter="dropbox.init()" onload="dropbox.init()" data-mdc-auto-init="MDCRipple">
+				<input id="filein" type="file" accept=".txt,.csv">
+				<label for="filein"><i id="dropbox_icon" class="material-icons">file_upload</i></label>
+				<p id="filedisplay" class="mdc-typography--headline">Drag and drop a file here, or click.</p>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+	<button class="mdc-button mdc-button--raised mdc-button--accent analyze-button" id="submit" onclick="text_analyzer.analyze()" data-mdc-auto-init="MDCRipple">
+			Analyze
+		</button>
+</div>
