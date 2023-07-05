@@ -1,5 +1,5 @@
 /*globals spliddit nlp franc iso6393_min*/
-self.importScripts('https://unpkg.com/compromise@latest/builds/compromise.min.js');
+self.importScripts('https://unpkg.com/compromise@13.11.4/builds/compromise.min.js');
 self.importScripts('/shared/js/franc-min-v3.0.1.min.js');
 self.importScripts('/shared/data/iso-6393-min.min.js');
 self.importScripts('/shared/js/spliddit.min.js');
