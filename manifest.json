@@ -2,12 +2,12 @@
   "name": "Text Analyzer",
   "short_name": "TextAnalyzer",
   "icons": [{
-      "src": "/wapps/textanalyzer/assets/images/android-chrome-192x192.png",
+      "src": "/textanalyzer/assets/images/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/wapps/textanalyzer/assets/images/android-chrome-512x512.png",
+      "src": "/textanalyzer/assets/images/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -16,5 +16,5 @@
   "background_color": "#4dd0e1",
   "display": "standalone",
   "orientation": "landscape",
-  "start_url": "/wapps/textanalyzer/dev/index.html"
+  "start_url": "/textanalyzer/index.html"
 }
